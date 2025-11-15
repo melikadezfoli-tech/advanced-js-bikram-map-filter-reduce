@@ -157,15 +157,15 @@ const inventory = [
 ];
 
 
-let nombresTvCaras = inventory
+const nombresTvCaras = inventory
   .filter(tv => tv.price > 300) 
   .map(tv => tv.name);            
 console.log(nombresTvCaras);
 
 //[ ] 6.- Dado el siguiente array **numeros** [39, 2, 4, 25, 62], obten la multiplicación de todos los elementos del array
 
-let numero=[39, 2, 4, 25, 62];
-let multiplicacionNum=numero.reduce((acc,num)=>{
+const numero=[39, 2, 4, 25, 62];
+const multiplicacionNum=numero.reduce((acc,num)=>{
     return acc*num}
 );
 console.log(multiplicacionNum);
@@ -186,6 +186,44 @@ const sentenceElements = [
   'javascript'
 ];
 
+const elemConcat=sentenceElements.reduce((acc,elem)=>{
+  return acc+" "+elem
+});
+console.log(elemConcat);
 
+//8.- Obtener el monto total de los elementos que pertenecen a catergory "code" en el siguiente array.
 
+const books = [
+  {
+    name: ' JS for dummies',
+    author: 'Emily A. Vander Veer',
+    price: 20,
+    category: 'code'
+  },
+  {
+    name: 'Don Quijote de la Mancha',
+    author: 'Cervantes',
+    price: 14,
+    category: 'novel'
+  },
+  {
+    name: 'Juego de tronos',
+    author: 'George R. Martin',
+    price: 32,
+    category: 'Fantasy'
+  },
+  {
+    name: 'javascript the good parts',
+    author: 'Douglas Crockford',
+    price: 40,
+    category: 'code'
+  }
+];
 
+const bookCode=books.reduce((acc,element)=>{
+  if (element.category==="code"){
+  return acc+1
+}
+return acc;
+},0);
+console.log(bookCode);
